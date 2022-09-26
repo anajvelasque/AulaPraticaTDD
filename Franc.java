@@ -3,14 +3,21 @@ import static org.junit.Assert.*;
 class Franc extends Money
 {
     private int amount;
-    Franc (int amount)
+    private String currency;
+
+    Franc(int amount, String currency)
     {
-        this.amount= amount;
+        super(amount, currency);
     }
     Money times(int multiplier)
     {
-        return new Franc(amount * multiplier);
+         return Money.franc(amount * multiplier);
     }
+
+    String currency() {
+        return currency;
+    }
+    
     public boolean equals(Object object)
     {
         Franc franc = (Franc) object;

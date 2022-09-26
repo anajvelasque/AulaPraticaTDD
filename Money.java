@@ -1,24 +1,25 @@
-abstract class Money{
+class Money{
 
     protected int amount;
-     Money times(int multiplier)
-    {
-        return Money.dollar(amount * multiplier);
-    }
     protected String currency;
-    
-    public boolean equals(Object object)  {
-        Money money = (Money) object;
-        return amount == money.amount && getClass().equals(money.getClass());
-    }
 
-    static Dollar dollar(int amount)  {
+    static Money dollar(int amount)  {
         return new Dollar(amount, "USD");
     }
 
     Money(int amount, String currency) {
         this.amount = amount;
         this.currency = currency;
+    }
+     public boolean equals(Object object)
+    {
+        Money money = (Money) object;
+        return amount == money.amount && currency().equals(money.currency());
+    }
+
+    Money times(int multiplier)
+    {
+        return new Money(amount * multiplier, currency);
     }
     String currency() {
         return currency;

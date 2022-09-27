@@ -1,15 +1,15 @@
 import static org.junit.Assert.*;
 
-class Dollar extends Money{
+class dollar extends Money{
 
    private String currency;
 
-    Dollar(int amount, String currency){
+    dollar(int amount, String currency){
       super(amount, currency);
    }
 
    public boolean equals (Object object){
-      Dollar dollar = (Dollar) object;
+      dollar dollar = (dollar) object;
       return amount == dollar.amount;
    }
 }

@@ -4,7 +4,7 @@ class Money{
     protected String currency;
 
     static Money dollar(int amount)  {
-        return new Dollar(amount, "USD");
+        return new dollar(amount, "USD");
     }
 
     Money(int amount, String currency) {
